@@ -1,0 +1,304 @@
+.drum {
+  padding: 15px;
+  background-color: #3f3f3f;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+}
+
+.drum-display {
+  background-color: #202020;
+  color: #35cac5;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  margin-top: 30px;
+  border: 1px solid #000;
+}
+
+.drum-display h1 {
+  margin: 0;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.drum-control {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-size: 0.85rem;
+}
+
+.drum-control-volumn {
+  margin-left: 5px;
+  width: calc(100% - 140px);
+}
+
+.drum-control-bank {
+  width: 120px;
+}
+
+.drum-control-volumn-value {
+  opacity: 0;
+  color: #35cac5;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.drum-control-volumn input {
+  padding-right: 15px;
+}
+
+.drum-pads {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.drum-pad {
+  display: block;
+  -webkit-box-flex: 1;
+  flex: 1 1 calc(33.3333% - 0.5rem);
+  width: 33.3333%;
+  margin: 0.25rem;
+  background-color: #202020;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border: 1px solid #000;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+.drum-pad.active,
+.drum-pad:active {
+  background-color: #35cac5;
+}
+
+.drum-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+@media (min-width: 576px) {
+  .drum {
+    max-width: 385px;
+  }
+}
+
+/* How TO - Toggle Switch
+ * Ref: https://www.w3schools.com/howto/howto_css_switch.asp
+ */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 23px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #202020;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  border: 1px solid #000;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #35cac5;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+}
+
+/* End of How TO - Toggle Switch */
+
+/* simple cross-browser slider with progress
+ * Ref: https://css-tricks.com/sliding-nightmare-understanding-range-input/
+ */
+
+[type="range"] {
+  --range: calc(var(--max, 100) - var(--min, 0));
+  --ratio: calc((var(--val, 50) - var(--min, 0)) / var(--range));
+  --sx: calc(0.5*var(--thumb-width, "1.15em") + var(--ratio)*(100% - var(--thumb-width, "1.15em")));
+  margin: 0;
+  padding: 0;
+  width: var(--width, 100%);
+  height: var(--height, "1.5em");
+  background: transparent;
+  font: 1em/1 arial, sans-serif;
+  outline: none;
+}
+
+[type="range"],
+[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+[type="range"]::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  border-width: var(--track-border-width, 1px);
+  border-style: var(--track-border-style, "solid");
+  border-color: var(--track-border-color, "#000");
+  width: var(--width, 100%);
+  height: var(--track-height, "0.75em");
+  background: var(--track-color, "#202020");
+  border-radius: var(--border-radius, "0.5em");
+  -webkit-border-radius: var(--border-radius, "0.5em");
+  -moz-border-radius: var(--border-radius, "0.5em");
+  -ms-border-radius: var(--border-radius, "0.5em");
+}
+
+[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(var(--progress-color, #35cac5), var(--progress-color, #35cac5)) 0/var(--sx) 100% no-repeat var(--track-color, "#202020");
+}
+
+[type="range"]::-moz-range-track {
+  box-sizing: border-box;
+  border-width: var(--track-border-width, 1px);
+  border-style: var(--track-border-style, "solid");
+  border-color: var(--track-border-color, "#000");
+  width: var(--width, 100%);
+  height: var(--track-height, "0.75em");
+  background: var(--track-color, "#202020");
+  border-radius: var(--border-radius, "0.5em");
+  -webkit-border-radius: var(--border-radius, "0.5em");
+  -moz-border-radius: var(--border-radius, "0.5em");
+  -ms-border-radius: var(--border-radius, "0.5em");
+}
+
+[type="range"]::-ms-track {
+  box-sizing: border-box;
+  border-width: var(--track-border-width, 1px);
+  border-style: var(--track-border-style, "solid");
+  border-color: var(--track-border-color, "#000");
+  width: var(--width, 100%);
+  height: var(--track-height, "0.75em");
+  background: var(--track-color, "#202020");
+  border-radius: var(--border-radius, "0.5em");
+  -webkit-border-radius: var(--border-radius, "0.5em");
+  -moz-border-radius: var(--border-radius, "0.5em");
+  -ms-border-radius: var(--border-radius, "0.5em");
+}
+
+[type="range"]::-moz-range-progress {
+  height: var(--track-color, "0.75em");
+  background: var(--progress-color, #35cac5);
+  border-radius: var(--border-radius, "0.5em");
+  -webkit-border-radius: var(--border-radius, "0.5em");
+  -moz-border-radius: var(--border-radius, "0.5em");
+  -ms-border-radius: var(--border-radius, "0.5em");
+}
+
+[type="range"]::-ms-fill-lower {
+  height: var(--track-color, "0.75em");
+  background: var(--progress-color, #35cac5);
+  border-radius: var(--border-radius, "0.5em");
+  -webkit-border-radius: var(--border-radius, "0.5em");
+  -moz-border-radius: var(--border-radius, "0.5em");
+  -ms-border-radius: var(--border-radius, "0.5em");
+}
+
+[type="range"]::-webkit-slider-thumb {
+  margin-top: calc(-1 * (var(--thumb-height, "1.15em") - var(--track-height, "0.75em") + 2*var(--track-border-width, 1px)) / 2);
+  box-sizing: border-box;
+  border: none;
+  width: var(--thumb-width, "1.15em");
+  height: var(--thumb-height, "1.15em");
+  border-radius: var(--thumb-border-radius, "40%");
+  background: var(--thumb-color, #202020);
+  border: var(--thumb-border, "1px solid #000");
+}
+
+[type="range"]::-moz-range-thumb {
+  box-sizing: border-box;
+  border: none;
+  width: var(--thumb-width, "1.15em");
+  height: var(--thumb-height, "1.15em");
+  border-radius: var(--thumb-border-radius, "40%");
+  background: var(--thumb-color, #202020);
+  border: var(--thumb-border, "1px solid #000");
+}
+
+[type="range"]::-ms-thumb {
+  margin-top: 0;
+  box-sizing: border-box;
+  border: none;
+  width: var(--thumb-width, "1.15em");
+  height: var(--thumb-height, "1.15em");
+  border-radius: var(--thumb-border-radius, "40%");
+  background: var(--thumb-color, #202020);
+  border: var(--thumb-border, "1px solid #000");
+}
+
+[type="range"]::-ms-tooltip {
+  display: none;
+}
+
+/* End of simple cross-browser slider with progress */

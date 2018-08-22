@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 15px;
+  font: normal normal normal 1rem/1.6 Nunito Sans, Helvetica, Arial, sans-serif;
+  color: #aaa;
+  background-color: #aaa;
+}
+
+a {
+  text-decoration: none;
+  color: #35cac5;
+}
